@@ -1,0 +1,42 @@
+# Schema for customers.csv
+
+# Reading this table example: pd.read_csv(r'data/customers.csv')
+
+customer_id: integer
+    - Unique identifier for each customer
+
+name: string
+    - Full name (first and last)
+
+email: string
+    - Customer email address
+
+phone: string
+    - Contact phone number in +1-XXX-XXX-XXXX format
+
+age: integer
+    - Age in years (18–80)
+
+sex: enum {Male, Female, Other}
+    - Customer gender
+
+join_date: date (YYYY-MM-DD)
+    - Date when the customer joined
+
+leave_date: date (YYYY-MM-DD) or blank
+    - Date when the customer left, empty if still active
+
+churn_flag: integer {0, 1}
+    - 1 if customer has left, 0 if still active
+
+subscription_plan: enum {Free, Basic, Premium, Enterprise}
+    - Customer's subscription level
+
+city: string
+    - Finnish city (e.g., Helsinki, Espoo, Tampere, ...)
+
+zip_code: string
+    - 5-digit Finnish postal code (e.g., 00100)
+
+last_login_date: date (YYYY-MM-DD)
+    - Most recent date customer logged in
